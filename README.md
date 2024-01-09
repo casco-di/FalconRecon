@@ -3,13 +3,6 @@
 
 CTF web enumeration tool
 
-
-## Features
-
-- Server fingerprinting
-- Directory bruteforce
-- Flag regex matching
-
 ```
 ___________      .__                        __________
 \_   _____/____  |  |   ____  ____   ____   \______   \ ____   ____  ____   ____
@@ -33,6 +26,11 @@ options:
                         Wordlist for enumeration
 ```
 
+## Features
+
+- Server fingerprinting
+- Directory bruteforce
+- Flag regex matching
 
 ## Demo
 
