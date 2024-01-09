@@ -77,9 +77,10 @@ def main():
         print("[+] Enabling Burpsuite proxy...")
         http.proxies.update(burp)
     fingerprint(args.url)
-    flags = dircheck(http, args.url, args.wordlist, args.regexpattern)
-    print(f"[+] Total of flags found: {len(flags)}\n[+] Flags: ")
-    for flag in flags:
-        print(f"\t{flag}")
+    flags = (dircheck(http, args.url, args.wordlist, args.regexpattern))
+    if args.regexpattern:
+        print(f"[+] Total of flags found: {len(flags)}\n[+] Flags: ")
+        for flag in flags:
+            print(f"\t{flag}")
 if __name__ == "__main__":
     main()
