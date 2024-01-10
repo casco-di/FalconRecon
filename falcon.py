@@ -48,6 +48,14 @@ parser.add_argument(
     type=str,
     help="Wordlist for enumeration"
 )
+parser.add_argument(
+    "-t",
+    "--threads",
+    dest="threads",
+    default=10,
+    type=int,
+    help="Num of threads"
+)
 
 args = parser.parse_args()
 
@@ -77,7 +85,7 @@ def main():
         print("[+] Enabling Burpsuite proxy...")
         http.proxies.update(burp)
     fingerprint(args.url)
-    flags = dircheck_threaded(http, args.url, args.wordlist, args.regexpattern)
+    flags = dircheck_threaded(http, args.url, args.wordlist, args.regexpattern, args.threads)
     if args.regexpattern:
         print(f"[+] Total of flags found: {len(flags)}\n[+] Flags: ")
         for flag in flags:
