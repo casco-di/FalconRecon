@@ -46,6 +46,7 @@ options:
 ```bash
   git clone https://github.com/casco-di/FalconRecon
   cd FalconRecon
+  pip install -r requirements.txt
   python3 falcon.py -u <target> 
 ```
 
