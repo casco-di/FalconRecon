@@ -1,7 +1,7 @@
 import argparse
 import os, sys
 import requests
-from modules.recon import dircheck
+from modules.recon import dircheck_threaded
 
 banner = """
 ___________      .__                        __________                            
@@ -77,7 +77,7 @@ def main():
         print("[+] Enabling Burpsuite proxy...")
         http.proxies.update(burp)
     fingerprint(args.url)
-    flags = dircheck(http, args.url, args.wordlist, args.regexpattern)
+    flags = dircheck_threaded(http, args.url, args.wordlist, args.regexpattern)
     if args.regexpattern:
         print(f"[+] Total of flags found: {len(flags)}\n[+] Flags: ")
         for flag in flags:
