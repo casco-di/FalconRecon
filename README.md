@@ -24,6 +24,8 @@ options:
   --burp-port BURPPORT  burp default port
   -w WORDLIST, --wordlist WORDLIST
                         Wordlist for enumeration
+  -t THREADS, --threads THREADS
+                        Num of threads
 ```
 
 ## Features
@@ -31,6 +33,7 @@ options:
 - Server fingerprinting
 - Directory bruteforce
 - Flag regex matching
+- Threading! (NEW)
 
 ## Demo
 
